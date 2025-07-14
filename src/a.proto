@@ -1,0 +1,43 @@
+syntax = "proto3";
+
+package addressbook;
+
+// Define a message type representing a person
+message Person {
+  string name = 1;
+  int32 age = 2;
+}
+
+// Request type for name-based queries
+message GetPersonByNameRequest {
+  string name = 1;
+}
+
+// Request type for age-based queries
+message GetPersonByAgeRequest {
+  int32 age = 1;
+}
+
+// Response containing multiple people
+message PersonList {
+  repeated Person people = 1;
+}
+
+message Empty {}
+
+service AddressBookService {
+  // Add a person to the address book
+  rpc AddPerson(Person) returns (Person);
+
+  // Get all person of the address book
+  rpc GetAllPersons(Empty) returns (PersonList);
+
+  // Get a person by name
+  rpc GetPersonByName(GetPersonByNameRequest) returns (Person);
+
+  // Get all persons by age
+  rpc GetPersonsByAge(GetPersonByAgeRequest) returns (PersonList);
+
+  // Delete a person by name
+  rpc DeletePersonByName(GetPersonByNameRequest) returns (Person);
+}
