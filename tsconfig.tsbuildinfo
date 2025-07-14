@@ -1,1 +1,1 @@
-{"root":["./src/index.ts"],"version":"5.8.3"}
+{"root":["./src/index.ts","./src/generated/a.ts","./src/generated/addressbook/addressbookservice.ts","./src/generated/addressbook/empty.ts","./src/generated/addressbook/getpersonbyagerequest.ts","./src/generated/addressbook/getpersonbynamerequest.ts","./src/generated/addressbook/person.ts","./src/generated/addressbook/personlist.ts"],"version":"5.8.3"}
